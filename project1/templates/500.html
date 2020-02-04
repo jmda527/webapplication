@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        {% bootstrap_messages %}
+        <!-- Custom styles for this template -->
+        <!--link href="../signin.css" rel="stylesheet"-->
+        <link href="https://v3.bootcss.com/examples/signin/signin.css" rel="stylesheet">
+        <title>公文分類器</title>
+    </head>
+
+<!--nagivation bar-->
+    <body>
+        <div class="alert alert-danger" role="alert">
+            <center><strong>錯誤! 請確認上傳的Excel格式是否包含 '主旨' 與 '承辦人' 這兩欄</strong></center>
+        </div>
+        <center>
+            <button type="button" class="btn btn-lg btn-danger" onclick="javascript:location.href='upload'">
+            返回上傳頁 »
+            </button>
+        </center>
+    </body>
+</html>

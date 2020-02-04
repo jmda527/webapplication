@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        {% bootstrap_messages %}
+        <!-- Custom styles for this template -->
+        <!--link href="../signin.css" rel="stylesheet"-->
+        <link href="https://v3.bootcss.com/examples/signin/signin.css" rel="stylesheet">
+        <style>
+            .footer {
+                color: #FFFFFF;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                background-color: #696969;
+            }
+        </style>
+        <title>公文分類器</title>
+    </head>
+
+<!--nagivation bar-->
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <span class="navbar-brand">公文分類器</span>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">選擇組室</a></li>
+                        <li class="active"><a href="/seperate/query">Query</a></li>
+                        <li class="active"><a href="/seperate/upload">更新資料</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="page-header"><center><h2><strong>分類結果</strong></h2></center></div>
+        {% if first_score < 60 %}
+            <div class="alert alert-danger" role="alert">
+                <strong>分類器不確定，請再確認!</strong>
+            </div>
+        {% endif %}
+    <!--    表單-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">關鍵字: {{ content }}</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>承辦人</th>
+                            <th>機率(%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>{{ name.0 }}</strong></td>
+                            <td><strong>{{ score.0 }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>{{ name.1 }}</td>
+                            <td>{{ score.1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>{{ name.2 }}</td>
+                            <td>{{ score.2 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <center>
+            <button type="button" class="btn btn-lg btn-primary" onclick="javascript:location.href='query'">
+                返回 »
+            </button>
+        </center>
+        <footer class="footer"><center>Powered by JMDA 2020.01.21</center></footer>
+    </body>
+</html>

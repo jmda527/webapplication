@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        {% bootstrap_messages %}
+        <!-- Custom styles for this template -->
+        <link href="https://v3.bootcss.com/examples/signin/signin.css" rel="stylesheet">
+        <style>
+            .footer {
+                color: #FFFFFF;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                background-color: #696969;
+            }
+        </style>
+        <title>公文分類器</title>
+    </head>
+    <body><br/><br/><br/><br/><br/>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <span class="navbar-brand">公文分類器</span>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">選擇組室</a></li>
+                        <li class="active"><a href="/seperate/query">Query</a></li>
+                        <li class="active"><a href="/seperate/upload">更新資料</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+         <!-- /container -->
+        <div class="container">
+            <form class="form-signin" action="/seperate/sep_check" method="get">
+                <h2 class="form-signin-heading">查詢</h2>
+                <input type="text" name="content" class="form-control" placeholder="請輸入關鍵字..." required autofocus>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" id="btn">送出</button>
+            </form>
+        </div>
+        <footer class="footer"><center>Powered by JMDA 2020.01.21</center></footer>
+    </body>
+<html/>
