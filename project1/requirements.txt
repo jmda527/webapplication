@@ -16,7 +16,7 @@ idna==2.8
 jieba==0.42
 joblib==0.14.1
 mysqlclient==1.4.6
-numpy==1.18.1
+numpy==1.22.0
 pandas==0.25.3
 protobuf==3.11.2
 pyasn1==0.4.8
