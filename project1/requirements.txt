@@ -14,7 +14,7 @@ googleapis-common-protos==1.51.0
 gunicorn==19.9.0
 idna==2.8
 jieba==0.42
-joblib==0.14.1
+joblib==1.2.0
 mysqlclient==1.4.6
 numpy==1.18.1
 pandas==0.25.3
